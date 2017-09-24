@@ -1,0 +1,29 @@
+---
+ web_instance_type: t2.micro
+
+ web_security_groups:
+   - sg_name: web_sg
+     sg_description: This Security Group is for web instance
+     sg_rules:
+       - proto: tcp
+         from_port: 22
+         to_port: 22
+         cidr_ip: 0.0.0.0/0
+       - proto: tcp
+         from_port: 80
+         to_port: 80
+         cidr_ip: 0.0.0.0/0
+       - proto: tcp
+         from_port: 443
+         to_port: 443
+         cidr_ip: 0.0.0.0/0
+         
+            
+         
+ # Only Ubuntu distribution is supported
+  
+ linux_distribution: ubuntu
+ ubuntu_release: trusty
+ ami_store: ebs
+ virutalization_type: hvm
+ cpu_architecture: amd64

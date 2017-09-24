@@ -1,0 +1,4 @@
+---
+ ENV: testing
+ application: Opencms
+ server_role: webserver
