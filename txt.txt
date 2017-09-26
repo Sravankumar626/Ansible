@@ -1,7 +1,0 @@
-├── playbook.yml
-├── inventory
-├── vars.yml
-├── roles/
-│   ├── vpc/
-│   │   ├── tasks/
-│   │   │   ├── main.yml
