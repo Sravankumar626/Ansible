@@ -8,19 +8,19 @@ If you are fluent with Cloudformation, you know where to look and what to do. If
 
 **Pre-requisites**
 
-Create AWS account and generate security credentials.
+- Create AWS account and generate security credentials.
 
-Create and Download private key from AWS account which would be used to access Instances.
+- Create and Download private key from AWS account which would be used to access Instances.
 
-Simple installation
+**Simple installation
 
 Clone or Download ZIp  of the repo:
 
-git clone https://github.com/Shravan6488/Ansible.git
+git clone git@github.com:Shravan6488/Ansible.git
 
 ### once you get the cloudformation.yml file in your local.
 
-1) Logon to Aws account.
+1. Logon to Aws account.
 2) Create a keypair and dowload in local (to login to instances later at the time of app deployment)
 3) Go to cloudformation services
 4) click on create stack/Create new stack
