@@ -46,14 +46,6 @@ Once the testing completes, you can delete the stack to save the extra cost on A
 
 simple 
 
-Contribute
-
-Fork it
-Create your feature branch (git checkout -b my-new-feature)
-Commit your changes (git commit -am 'Add some feature')
-Push to the branch (git push origin my-new-feature)
-Create new Pull Request
-License
 
 Author:	Sravan Kumar
 Copyright:	Sravan Kumar
