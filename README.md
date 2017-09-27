@@ -1,8 +1,8 @@
  # CloudFormation Template
 
-This Template is an attempt to create Subnets in Aws with three tiered architecture. It comprises cloudformation Template to create the stack. The automation is enabled through Cloudformationtemplate.yml starting from stack creation to creation of subnets and instances including Elastic IP..
+This Template is an attempt to create Subnets in Aws with three tiered architecture. It comprises cloudformation Template to create the Infrastructure. The automation is enabled through Cloudformationtemplate.yml starting from stack creation to creation of subnets and instances including Elastic IP..
 
-Setup your AWS with Cloudformation, you can write the code using Cloudformation using Aws account or installing aws cli in your local.
+Setup your AWS with Cloudformation, you can write the code using Cloudformation YAML/JSON using Cloduformation services or installing aws cli in your local.
 
 If you are fluent with Cloudformation, you know where to look and what to do. If you are new to cloudformation, just follow along with step-by-step instructions below.
 
@@ -10,7 +10,8 @@ If you are fluent with Cloudformation, you know where to look and what to do. If
 
 - Create AWS account and generate security credentials.
 
-- Create and Download private key from AWS account which would be used to access Instances.
+- Create  a key pair in AWS key pair section(you can find in ec2 instance Dashboard under that in Network & security)
+and Download  key pair once you created which would be used to access Instances.
 
 **Simple installation**
 
