@@ -43,10 +43,8 @@ This tempalte creates the following.
 
 **Once the testing completes, you can delete the stack to save the extra cost on AWS**
 
--- TO do this select your stack go to actions tab and click DELET STACK.
+-- To do this select your stack go to actions tab and click DELET STACK.
 
-
-
-Author:	Sravan Kumar
-Copyright:	Sravan Kumar
-License:	The MIT License (MIT)
+Author:	Sravan Kumar 
+ Copyright:	Sravan Kumar
+  License:	The MIT License (MIT)
