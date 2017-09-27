@@ -12,7 +12,7 @@ If you are fluent with Cloudformation, you know where to look and what to do. If
 
 - Create and Download private key from AWS account which would be used to access Instances.
 
-**Simple installation
+**Simple installation**
 
 Clone or Download ZIp  of the repo:
 
@@ -39,9 +39,9 @@ This tempalte creates the following.
 5) Created elastic IP and attahced to Web01 instance
 6) Creates Security groups where the ports are opened accordingly ( web port 22,80 and 443) (app and DB 22 )
 
-**To evaluate this app , please consider using the following boxes for best results:
+**To evaluate this app , please consider using the following boxes for best results**
 
-**Once the testing completes, you can delete the stack to save the extra cost on AWS.
+**Once the testing completes, you can delete the stack to save the extra cost on AWS**
 
 -- TO do this select your stack go to actions tab and click DELET STACK.
 
