@@ -7,7 +7,7 @@ Setup your AWS with Cloudformation, you can write the code using Cloudformation 
 If you are fluent with Cloudformation, you know where to look and what to do. If you are new to cloudformation, just follow along with step-by-step instructions below.
 
 **Pre-requisites**
-
+- Install git .
 - Create AWS account and generate security credentials.
 
 - Create  a key pair in AWS key pair section(you can find in ec2 instance Dashboard under that in Network & security)
