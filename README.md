@@ -1,4 +1,4 @@
-#CloudFormation Template
+ #CloudFormation Template
 
 This Template is an attempt to create Subnets in Aws with three tiered architecture. It comprises cloudformation Template to create the stack. The automation is enabled through Cloudformationtemplate.yml starting from stack creation to creation of subnets and instances including Elastic IP..
 
@@ -42,6 +42,7 @@ This tempalte creates the following.
 To evaluate this app , please consider using the following boxes for best results:
 
 Once the testing completes, you can delete the stack to save the extra cost on AWS.
+
 -- TO do this select your stack go to actions tab and click DELET STACK.
 
 simple 
