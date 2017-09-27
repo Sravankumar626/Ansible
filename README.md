@@ -45,6 +45,6 @@ This tempalte creates the following.
 
 -- To do this select your stack go to actions tab and click DELET STACK.
 
-Author:	Sravan Kumar 
- Copyright:	Sravan Kumar
-  License:	The MIT License (MIT)
+- Author:	Sravan Kumar 
+ - Copyright:	Sravan Kumar
+  - License:	The MIT License (MIT)
