@@ -1,4 +1,4 @@
- #CloudFormation Template
+ # CloudFormation Template
 
 This Template is an attempt to create Subnets in Aws with three tiered architecture. It comprises cloudformation Template to create the stack. The automation is enabled through Cloudformationtemplate.yml starting from stack creation to creation of subnets and instances including Elastic IP..
 
@@ -6,7 +6,7 @@ Setup your AWS with Cloudformation, you can write the code using Cloudformation 
 
 If you are fluent with Cloudformation, you know where to look and what to do. If you are new to cloudformation, just follow along with step-by-step instructions below.
 
-Pre-requisites
+**Pre-requisites**
 
 Create AWS account and generate security credentials.
 
@@ -29,7 +29,7 @@ once you get the cloudformation.yml file in your local.
 7) click Next give the Stack name and select key pair drop down which you have created earlier and next and create.
 8) wait for few minutes till the status changes to CREATE_COMPLETE.
 
-What happenes once the stack is created.See below.
+## What happenes once the stack is created.See below.
 
 This tempalte creates the following.
 1)Creates VPC
@@ -45,7 +45,6 @@ Once the testing completes, you can delete the stack to save the extra cost on A
 
 -- TO do this select your stack go to actions tab and click DELET STACK.
 
-simple 
 
 
 Author:	Sravan Kumar
