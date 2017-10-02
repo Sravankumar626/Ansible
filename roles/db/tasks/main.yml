@@ -1,0 +1,99 @@
+---
+
+- name: Define mysql_packages.
+  set_fact:
+    mysql_packages: "{{ __mysql_packages | list }}"
+  when: mysql_packages is not defined
+
+- name: Define mysql_daemon.
+  set_fact:
+    mysql_daemon: "{{ __mysql_daemon }}"
+  when: mysql_daemon is not defined
+
+- name: Define mysql_slow_query_log_file.
+  set_fact:
+    mysql_slow_query_log_file: "{{ __mysql_slow_query_log_file }}"
+  when: mysql_slow_query_log_file is not defined
+
+- name: Define mysql_log_error.
+  set_fact:
+    mysql_log_error: "{{ __mysql_log_error }}"
+  when: mysql_log_error is not defined
+
+- name: Define mysql_syslog_tag.
+  set_fact:
+    mysql_syslog_tag: "{{ __mysql_syslog_tag }}"
+  when: mysql_syslog_tag is not defined
+
+- name: Define mysql_pid_file.
+  set_fact:
+    mysql_pid_file: "{{ __mysql_pid_file }}"
+  when: mysql_pid_file is not defined
+
+- name: Define mysql_config_file.
+  set_fact:
+    mysql_config_file: "{{ __mysql_config_file }}"
+  when: mysql_config_file is not defined
+
+- name: Define mysql_config_include_dir.
+  set_fact:
+    mysql_config_include_dir: "{{ __mysql_config_include_dir }}"
+  when: mysql_config_include_dir is not defined
+
+- name: Define mysql_socket.
+  set_fact:
+    mysql_socket: "{{ __mysql_socket }}"
+  when: mysql_socket is not defined
+
+- name: Define mysql_supports_innodb_large_prefix.
+  set_fact:
+    mysql_supports_innodb_large_prefix: "{{ __mysql_supports_innodb_large_prefix }}"
+  when: mysql_supports_innodb_large_prefix is not defined
+
+- name: Check if MySQL is already installed.
+  stat: path=/etc/init.d/mysql
+  register: mysql_installed
+
+- name: Update apt cache if MySQL is not yet installed.
+  apt: update_cache=yes
+  when: mysql_installed.stat.exists == false
+
+- name: Ensure MySQL Python libraries are installed.
+  apt: "name=python-mysqldb state=installed"
+
+- name: Ensure MySQL packages are installed.
+  apt: "name={{ item }} state=installed"
+  with_items: "{{ mysql_packages }}"
+  register: deb_mysql_install_packages
+
+# Because Ubuntu starts MySQL as part of the install process, we need to stop
+# mysql and remove the logfiles in case the user set a custom log file size.
+- name: Ensure MySQL is stopped after initial install.
+  service: "name={{ mysql_daemon }} state=stopped"
+  when: mysql_installed.stat.exists == false
+
+- name: Delete innodb log files created by apt package after initial install.
+  file: path={{ mysql_datadir }}/{{item}} state=absent
+  with_items:
+          - "ib_logfile0"
+          - "ib_logfile1"
+  when: mysql_installed.stat.exists == false
+
+
+
+
+
+# Variable configuration.
+
+- name: Check if MySQL packages were installed.
+  set_fact:
+    mysql_install_packages: "{{ (rh_mysql_install_packages is defined and rh_mysql_install_packages.changed)
+      or (deb_mysql_install_packages is defined and deb_mysql_install_packages.changed)
+      or (arch_mysql_install_packages is defined and arch_mysql_install_packages.changed) }}"
+
+# Configure MySQL.
+- include: configure.yml
+#- include: secure-installation.yml
+#- include: databases.yml
+#- include: users.yml
+#- include: replication.yml

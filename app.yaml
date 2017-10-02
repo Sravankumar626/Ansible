@@ -1,0 +1,11 @@
+---
+- hosts: appserver
+  sudo: yes
+  vars_files:
+    - "./roles/app/vars/main.yaml"
+
+  tasks:
+
+  roles:
+    - { role: app, web_server: "35.163.166.70", db_server: "34.212.176.208", db_user: "{{ db.mysql_root_username}}", db_pwd: "{{db.mysql_root_password}}", db_port: "{{db.mysql_port}}"  }
+

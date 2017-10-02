@@ -1,0 +1,8 @@
+---
+- hosts: webserver
+  sudo : yes
+  vars_files:
+    - "./roles/web/vars/main.yml"
+  roles:
+    - web
+
